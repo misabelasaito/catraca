@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IronPulse Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Arial Black', sans-serif;
+      }
+      .btn {
+        cursor: pointer;
+        height: 60px;
+        width: 60px;
+        font-size: 2rem;
+        border-radius: 50px;
+        background: linear-gradient(145deg, #5a5a5a, #3f3f3f);
+        box-shadow: -3px -3px 6px rgba(255, 255, 255, 0.05),
+                    3px 3px 6px rgba(0, 0, 0, 0.6);
+        color: #fefefe;
+        transition: all 0.2s ease-in-out;
+      }
+      .btn:active {
+        box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.05),
+                    inset 3px 3px 6px rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+  <body class="relative text-white overflow-x-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1920&q=80" alt="Treino" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black opacity-60"></div>
+    </div>
+
+    <div class="relative z-10 min-h-screen flex flex-col">
+      <header class="fixed top-0 left-0 right-0 z-20 flex items-center justify-between px-4 py-6 bg-black bg-opacity-60 backdrop-blur-md">
+        <div class="text-2xl font-black">
+          Iron<span class="text-[#FFD100]">Pulse</span>
+        </div>
+        <a href="inicio.html" class="bg-[#FFD100] text-black font-bold px-5 py-2 rounded hover:bg-yellow-400 transition">
+          Voltar
+        </a>
+      </header>
+
+      <main class="flex-1 flex items-center justify-center px-4 mt-16">
+        <div class="flex flex-col items-center">
+          <h1 class="text-4xl font-extrabold text-[#FFD100] drop-shadow-md mb-4">
+            Acesse sua Catraca Digital
+          </h1>
+          <p class="text-gray-200 text-lg mb-8">Digite seu CPF para entrar</p>
+
+          <div id="cal-body" class="w-full max-w-[420px] rounded-2xl bg-[rgba(72,72,72,0.8)] shadow-[0_0_30px_rgba(0,0,0,0.3)] p-10">
+            <div class="input mb-8">
+              <input type="text" id="display" readonly class="h-20 w-full rounded-lg bg-green-100 text-green-900 text-3xl px-6 shadow-inner focus:outline-none" />
+            </div>
+            <div class="grid grid-cols-3 gap-6 justify-items-center">
+              <button class="btn">1</button>
+              <button class="btn">2</button>
+              <button class="btn">3</button>
+              <button class="btn">4</button>
+              <button class="btn">5</button>
+              <button class="btn">6</button>
+              <button class="btn">7</button>
+              <button class="btn">8</button>
+              <button class="btn">9</button>
+              <button id="clear" class="btn bg-red-600 hover:bg-red-700 text-white">←</button>
+              <button class="btn">0</button>
+              <button id="ok" class="btn col-span-1 w-full bg-[#FFD100] hover:bg-yellow-400 text-black">OK</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

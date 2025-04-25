@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Bem-vindo - IronPulse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Arial Black', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="relative text-white overflow-x-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1920&q=80" alt="Treino" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black opacity-60"></div>
+    </div>
+
+    <div class="relative z-10 min-h-screen flex flex-col">
+      <header class="fixed top-0 left-0 right-0 z-20 flex items-center justify-between px-4 py-6 bg-black bg-opacity-60 backdrop-blur-md">
+        <div class="text-2xl font-black">
+          Iron<span class="text-[#FFD100]">Pulse</span>
+        </div>
+        <a href="index.html" class="bg-[#FFD100] text-black font-bold px-5 py-2 rounded hover:bg-yellow-400 transition">
+          Sair
+        </a>
+      </header>
+
+      <main class="flex-1 mt-24 px-4 flex items-center justify-center">
+        <div class="text-center">
+          <img id="foto" src="" alt="Foto do aluno" class="mx-auto rounded-full w-40 h-40 object-cover border-4 border-[#FFD100] mb-6 hidden" />
+          <h1 id="mensagem" class="text-3xl md:text-5xl font-extrabold text-[#FFD100] mb-4 drop-shadow-lg"></h1>
+          <p class="text-lg text-white">Aproveite seu treino com segurança e praticidade 💪</p>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const nome = urlParams.get('nome');
+      const fotoUrl = urlParams.get('foto');
+
+      const mensagemEl = document.getElementById('mensagem');
+      const fotoEl = document.getElementById('foto');
+
+      if (nome) {
+        mensagemEl.innerText = `Bem-vindo(a), ${nome}!`;
+      } else {
+        mensagemEl.innerText = 'Bem-vindo(a)!';
+      }
+
+      if (fotoUrl) {
+        fotoEl.src = decodeURIComponent(fotoUrl);
+        fotoEl.classList.remove('hidden');
+      }
+    </script>
+  </body>
+</html>
