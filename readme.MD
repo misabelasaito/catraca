@@ -63,4 +63,3 @@ Caso contrário, exibe "Acesso Negado".
 ```bash
 git clone https://github.com/seu-usuario/ironpulse-catraca.git
 
-Desenvolvido por Ana Paula e Maria Isabela
